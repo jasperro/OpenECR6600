@@ -1,0 +1,2 @@
+include $(TOPDIR)/../../platforms/ECR6600/openbeken.mk
+			
