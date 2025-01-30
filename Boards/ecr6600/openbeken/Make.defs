@@ -1,2 +1,15 @@
+VPATH += :ecr6600/openbeken
+
+INCPATHS += $(TOPDIR)/arch/andes/include \
+			$(TOPDIR)/include/components/wifi_crtl \
+			$(TOPDIR)/include/components/nv \
+			$(TOPDIR)/include/components/cli \
+			$(TOPDIR)/include/drivers/hal \
+			$(TOPDIR)/include/tx \
+
+ifeq ($(CONFIG_ECR6600_WIFI),y)
+LMAC_SOURCE_DIR = ../PS/wifi/ecr6600/ip/lmac/src/
+INCPATHS+=$(LMAC_SOURCE_DIR)/amt
+endif
+
 include $(TOPDIR)/../../platforms/ECR6600/openbeken.mk
-			

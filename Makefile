@@ -12,6 +12,7 @@
 TOPDIR				:= $(shell echo $(CURDIR) | sed -e 's/ /\\ /g')
 export BOARD_DIR	:= $(BOARD_DIR)
 export APP_NAME		:= $(APP_NAME)
+export OBK_PATH		=  $(realpath $(TOPDIR)/../../src)
 
 
 ###########################################
@@ -59,6 +60,8 @@ ARCHDIR		:= $(TOPDIR)/arch/$(CONFIG_CPU_ARCH)
 
 SUBDIRS 	:= $(shell find $(TOPDIR) -maxdepth 1 -type d)
 SUBDIRS		:= $(filter-out $(TOPDIR),$(SUBDIRS))
+# Match: (scripts|os|drivers|components|arch)
+# SUBDIRS := $(shell find $(TOPDIR) -maxdepth 1 -type d | grep -E "apps|include|Boards|scripts|os|drivers|components|arch")
 
 
 ###########################################

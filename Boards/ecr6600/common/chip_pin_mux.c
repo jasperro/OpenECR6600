@@ -139,8 +139,9 @@ void chip_pwm_pinmux_cfg(unsigned int cfg)
 			PIN_FUNC_SET(IO_MUX_GPIO17, FUNC_GPIO17_PWM_CTRL5);
 			break;
 
-		default:
-			while(1);
+		// Commented out because we don't want chip to hang if non-pwm pin is used
+		// default:
+		// 	while(1);
 	}
 }
 
@@ -303,8 +304,9 @@ void chip_io_mode_pinmux_cfg(int io_num,int mode)
 			PIN_FUNC_SET(IO_MUX_GPIO25, mode);
 			break;
 
-		default:
-			while(1);
+		// Commented out because we don't want chip to hang if non-existing pin is used
+		// default:
+		// 	while(1);
 	}
 }
 

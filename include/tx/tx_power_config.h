@@ -2,19 +2,19 @@
 #define TX_POWER_CONFIG
 #include <stdint.h>
 #include <adc.h>
-#ifndef DFE_VAR  
-#define __DFE extern  
-#define __ARR1(x,y,z)
-#define __ARR2(a0,a1,a2,a3,a4,a5,a6,a7)
-#define __ARR3(b0,b1,b2,b3,b4,b5)
-#define __VAR1(x)
-#else  
+// #ifndef DFE_VAR  
+// #define __DFE extern  
+// #define __ARR1(x,y,z)
+// #define __ARR2(a0,a1,a2,a3,a4,a5,a6,a7)
+// #define __ARR3(b0,b1,b2,b3,b4,b5)
+// #define __VAR1(x)
+// #else  
 #define __DFE  
 #define __ARR1(x,y,z) ={(x),(y),(z),}
 #define __ARR2(a0,a1,a2,a3,a4,a5,a6,a7) {a0,a1,a2,a3,a4,a5,a6,a7}
 #define __ARR3(b0,b1,b2,b3,b4,b5) = {b0,b1,b2,b3,b4,b5}
 #define __VAR1(x) = {x}
-#endif
+// #endif
 
 #define MCS_NUM 8
 #define CAL_INDEX 5
